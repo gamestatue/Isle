@@ -18,6 +18,11 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: 8.7
+          - name: Debug layout
+  run: |
+    pwd
+    git ls-files | grep -i manifest
+    ls -la app/src/main/
 
       - name: Build debug APK
         run: gradle assembleDebug --no-daemon
